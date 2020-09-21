@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Sticky-Texture_Example' do
+  pod 'Sticky-Texture', :path => '../'
+
+  target 'Sticky-Texture_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
