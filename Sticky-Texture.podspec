@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Sticky-Texture'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Sticky-Texture.'
+  s.summary          = 'Sticky scroll header for Texture'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,26 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
+  Sticky header for layout for ASCollectionNode and ASTableNode with pull to refresh capability
+  DESC
   s.homepage         = 'https://github.com/harri121/Sticky-Texture'
+  s.authors       = { 'Daniel Hariri' => 'daniel.hariri@gmail.com' }
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'harri121' => 'daniel.hariri@gmail.com' }
+  s.swift_version = '5.1'
+  s.license          = { :type => 'BSD', :file => 'LICENSE' }
+  s.author           = { 'Daniel Hariri' => 'daniel.hariri@gmail.com' }
   s.source           = { :git => 'https://github.com/harri121/Sticky-Texture.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '13.0'
 
   s.source_files = 'Sticky-Texture/Classes/**/*'
   
   # s.resource_bundles = {
-  #   'Sticky-Texture' => ['Sticky-Texture/Assets/*.png']
+  #   'Diffy-Texture' => ['Diffy-Texture/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Texture', '~> 3.0'
 end

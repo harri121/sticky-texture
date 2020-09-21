@@ -1,11 +1,10 @@
 use_frameworks!
+platform :ios, '13.0'
 
-target 'Sticky-Texture_Example' do
+target 'Sticky-Texture_Tests' do
   pod 'Sticky-Texture', :path => '../'
-
-  target 'Sticky-Texture_Tests' do
-    inherit! :search_paths
-
-    
-  end
+  pod 'Texture', '~> 3.0.0'
+  pod 'Quick', '~> 1.2.0'
+    pod 'Nimble', '~> 7.0'
 end
+

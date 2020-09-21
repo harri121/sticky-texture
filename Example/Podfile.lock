@@ -1,0 +1,72 @@
+PODS:
+  - Nimble (7.3.4)
+  - PINCache (3.0.1):
+    - PINCache/Arc-exception-safe (= 3.0.1)
+    - PINCache/Core (= 3.0.1)
+  - PINCache/Arc-exception-safe (3.0.1):
+    - PINCache/Core
+  - PINCache/Core (3.0.1):
+    - PINOperation (~> 1.2.0)
+  - PINOperation (1.2)
+  - PINRemoteImage/Core (3.0.1):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.1):
+    - PINRemoteImage/Core
+  - PINRemoteImage/PINCache (3.0.1):
+    - PINCache (~> 3.0.1)
+    - PINRemoteImage/Core
+  - Quick (1.2.0)
+  - Sticky-Texture (0.1.0):
+    - Texture (~> 3.0)
+  - Texture (3.0.0):
+    - Texture/AssetsLibrary (= 3.0.0)
+    - Texture/Core (= 3.0.0)
+    - Texture/MapKit (= 3.0.0)
+    - Texture/Photos (= 3.0.0)
+    - Texture/PINRemoteImage (= 3.0.0)
+    - Texture/Video (= 3.0.0)
+  - Texture/AssetsLibrary (3.0.0):
+    - Texture/Core
+  - Texture/Core (3.0.0)
+  - Texture/MapKit (3.0.0):
+    - Texture/Core
+  - Texture/Photos (3.0.0):
+    - Texture/Core
+  - Texture/PINRemoteImage (3.0.0):
+    - PINRemoteImage/iOS (~> 3.0.0)
+    - PINRemoteImage/PINCache
+    - Texture/Core
+  - Texture/Video (3.0.0):
+    - Texture/Core
+
+DEPENDENCIES:
+  - Nimble (~> 7.0)
+  - Quick (~> 1.2.0)
+  - Sticky-Texture (from `../`)
+  - Texture (~> 3.0.0)
+
+SPEC REPOS:
+  trunk:
+    - Nimble
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
+    - Quick
+    - Texture
+
+EXTERNAL SOURCES:
+  Sticky-Texture:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
+  PINCache: ee3c4abadd09970a61cdda0cfc345e69a3d75b26
+  PINOperation: 3a967a927e7867e61976c6cc23e5770416449fbc
+  PINRemoteImage: 3b7cedb118c2d357f87e9eabc7c81ba0202cb236
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  Sticky-Texture: c6ef9f9918587a8e1857978c10cfbe8ae42bb1b9
+  Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
+
+PODFILE CHECKSUM: f86ba7089c19b74b9cf273597d611ad900606c58
+
+COCOAPODS: 1.9.1
