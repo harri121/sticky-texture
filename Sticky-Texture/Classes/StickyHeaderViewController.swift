@@ -30,8 +30,11 @@ public class StickyHeaderViewController: ASDKViewController<ASDisplayNode> {
     
     
     private lazy var spinnerNode: ASDisplayNode = {
-        let node = ASDisplayNode()
-        //node.startAnimating()
+        let node = ASDisplayNode(viewBlock: {
+            let activityIndicatorView = UIActivityIndicatorView()
+            activityIndicatorView.startAnimating()
+            return activityIndicatorView
+        })
         return node
     }()
     
