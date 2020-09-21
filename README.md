@@ -26,4 +26,4 @@ harri121, daniel.hariri@gmail.com
 
 ## License
 
-Sticky-Texture is available under the MIT license. See the LICENSE file for more info.
+Sticky-Texture is available under the BSD license. See the LICENSE file for more info.
