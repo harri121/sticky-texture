@@ -7,17 +7,17 @@
 
 import AsyncDisplayKit
 
-public class StickyHeaderNode: ASDisplayNode {
+open class StickyHeaderNode: ASDisplayNode {
 
-    public var minHeight: CGFloat {
+    open var minHeight: CGFloat {
         return 64.0
     }
     
-    public var maxHeight: CGFloat {
+    open var maxHeight: CGFloat {
         return 200.0
     }
     
-    public var maxStretch: CGFloat {
+    open var maxStretch: CGFloat {
         return 60.0
     }
     
@@ -33,6 +33,6 @@ public class StickyHeaderNode: ASDisplayNode {
         style.width = ASDimension(unit: .fraction, value: 1.0)
     }
     
-    public func setCollapseProgress(_ progress: CGFloat, animated: Bool) {}
+    open func setCollapseProgress(_ progress: CGFloat, animated: Bool) {}
 }
 

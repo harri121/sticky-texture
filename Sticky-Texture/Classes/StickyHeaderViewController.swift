@@ -21,7 +21,7 @@ public protocol StickyPageType: ASCollectionDelegate {
     var reloadPublisher: AnyPublisher<Void, Error>? { get }
 }
 
-public class StickyHeaderViewController: ASDKViewController<ASDisplayNode> {
+open class StickyHeaderViewController: ASDKViewController<ASDisplayNode> {
     
     private let spinnerHeight: CGFloat = 56.0
     
@@ -103,16 +103,16 @@ public class StickyHeaderViewController: ASDKViewController<ASDisplayNode> {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
     
-    public override func viewDidLayoutSubviews() {
+    open override func viewDidLayoutSubviews() {
         if pages.isEmpty { return }
         let page = pages[currentIndex]
         updateScrollViewInsets(page: page)
@@ -245,7 +245,7 @@ extension StickyHeaderViewController: StickyPageDelegate {
         scrollDidUpdate(page: page)
     }
     
-    public  func stickyPageDidEndDragging(page: StickyPageType) {
+    public func stickyPageDidEndDragging(page: StickyPageType) {
         let scrollView = page.scrollView
         guard !isLoading else { return }
         let contentOffsetY = scrollView.contentOffset.y

@@ -7,7 +7,7 @@
 
 import AsyncDisplayKit
 
-public class StickyNavigationBarNode: ASDisplayNode {
+open class StickyNavigationBarNode: ASDisplayNode {
     
     public var height: CGFloat {
         return 64.0
@@ -25,6 +25,6 @@ public class StickyNavigationBarNode: ASDisplayNode {
         style.height = ASDimension(unit: .points, value: height)
     }
     
-    public func setCollapseProgress(_ progress: CGFloat, animated: Bool) {}
+    open func setCollapseProgress(_ progress: CGFloat, animated: Bool) {}
 }
 
