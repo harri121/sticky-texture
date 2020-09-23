@@ -9,7 +9,7 @@ import AsyncDisplayKit
 
 open class StickyNavigationBarNode: ASDisplayNode {
     
-    public var height: CGFloat {
+    open var height: CGFloat {
         return 64.0
     }
     
