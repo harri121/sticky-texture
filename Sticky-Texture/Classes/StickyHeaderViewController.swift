@@ -28,6 +28,10 @@ open class StickyHeaderViewController: ASDKViewController<ASDisplayNode> {
     private let navigationBarNode: StickyNavigationBarNode
     private let headerNode: StickyHeaderNode
     
+    public var reloadErrorPublisher: AnyPublisher<Error, Never> {
+        return reloadErrorSubject.eraseToAnyPublisher()
+    }
+    private let reloadErrorSubject = PassthroughSubject<Error, Never>()
     
     private lazy var spinnerNode: ASDisplayNode = {
         let node = ASDisplayNode(viewBlock: {
@@ -175,19 +179,19 @@ open class StickyHeaderViewController: ASDKViewController<ASDisplayNode> {
             .sink(
                 receiveCompletion: { [weak self] completion in
                     switch completion {
-                    case .failure:
-                        self?.isLoading = false
+                    case .failure(let error):
+                        self?.reloadErrorSubject.send(error)
                     default:
                         break
                     }
-            },
-            receiveValue: { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.isLoading = false
-                let currentPage = strongSelf.pages[strongSelf.currentIndex]
-                strongSelf.updateScrollViewInsets(page: currentPage)
-                strongSelf.node.setNeedsLayout()
-            })
+                    guard let strongSelf = self else { return }
+                    strongSelf.isLoading = false
+                    let currentPage = strongSelf.pages[strongSelf.currentIndex]
+                    strongSelf.updateScrollViewInsets(page: currentPage)
+                    strongSelf.node.setNeedsLayout()
+                },
+                receiveValue: {}
+            )
             .store(in: &disposables)
     }
     
